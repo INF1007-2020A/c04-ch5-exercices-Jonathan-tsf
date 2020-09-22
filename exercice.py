@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+# coding: utf-8
+
+# In[37]:
+
+
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 
@@ -28,7 +34,32 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    
+    Boolean_list = [True for a in range(len(groups))]
+    
+    for i in range(len(groups)):
+        for j in groups[i]:
+
+                
+            if len(groups[i]) > 10 or len(groups[i]) < 4:
+                Boolean_list[i] = False
+                break
+            
+            if j == 25:
+                Boolean_list[i] = True
+                break
+                
+            if j == 50:
+                for k in groups[i]:
+                    if k > 70:
+                        Boolean_list[i] = False
+                        
+            if j < 18:
+                Boolean_list[i] = False
+                
+            
+                
+    return Boolean_list
 
 
 def main() -> None:
@@ -56,3 +87,4 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+
